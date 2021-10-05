@@ -15,6 +15,7 @@ export const createPost = async (req: any, res: any) => {
 };
 
 export const getAllPost = async (req: any, res: any) => {
+  //console.log("get all post userId", req.userId);
   try {
     const result = await PostMessage.find({ userId: req.userId });
     res.status(200).json(result);
@@ -65,7 +66,7 @@ export const getFilterLang = async (req: any, res: any) => {
 //  Add language
 export const addLanguage = async (req: any, res: any) => {
   const { language } = req.body;
-  console.log(language)
+  console.log(language);
   try {
     const result = await LangMessage.create({
       userId: req.userId,
